@@ -1,0 +1,140 @@
+# Project information
+site_name: Armin's Engineering Notes
+site_description:
+    A personal collection of software engineering knowledge, learning notes, and
+    resources gathered throughout my journey as a developer
+site_author: Armin Zou
+
+# Repository
+repo_name: arminzou/software-engineering-knowledge-base
+repo_url: https://arminzou.github.io/software-engineering-knowledge-base/
+
+# Theme configuration
+theme:
+    name: material
+    features:
+        - navigation.tabs
+        - navigation.sections
+        - navigation.top
+        - navigation.footer
+        - search.suggest
+        - search.highlight
+        - content.code.copy
+        - header.autohide
+        - content.tooltips
+        - content.footnote.tooltips
+        - content.code.annotate
+    icon:
+        annotation: material/plus-circle
+
+    # Font configuration
+    font:
+        text: IBM Plex Sans
+        code: IBM Plex Mono
+
+    # Enable the color palette toggle
+    palette:
+        - scheme: default
+          primary: indigo
+          accent: indigo
+          toggle:
+              icon: material/brightness-7
+              name: Switch to dark mode
+        - scheme: slate
+          primary: indigo
+          accent: indigo
+          toggle:
+              icon: material/brightness-4
+              name: Switch to light mode
+
+# Extensions
+markdown_extensions:
+    - admonition
+    - abbr
+    - attr_list
+    - def_list
+    - footnotes
+    - md_in_html
+    - pymdownx.details
+    - pymdownx.highlight:
+          anchor_linenums: true
+          line_spans: __span
+          pygments_lang_class: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets:
+          auto_append:
+              - includes/abbreviations.md
+    - pymdownx.superfences:
+          custom_fences:
+              - name: mermaid
+                class: mermaid
+                format: !!python/name:pymdownx.superfences.fence_code_format
+    - pymdownx.tasklist:
+          custom_checkbox: true
+    - pymdownx.tabbed:
+          alternate_style: true
+    - pymdownx.emoji:
+          emoji_index: !!python/name:material.extensions.emoji.twemoji
+          emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    - pymdownx.blocks.caption
+    - tables
+    - toc:
+          permalink: true
+
+# Navigation structure
+nav:
+    - Home: index.md
+    - System Design:
+          # - Overview: README.md
+          - Fundamentals:
+                - Client-Server Architecture: fundamentals/client-server.md
+                - Server-Infrastructure: fundamentals/server-infrastructure.md
+                - Networking & Communication: fundamentals/networking.md
+                - API Development & Management: fundamentals/api.md
+                - Database & Storage: fundamentals/database.md
+                - Scalability & Performance: fundamentals/scalability.md
+                - Reliability & Consistency: fundamentals/reliability.md
+                - Software Architecture & Design: fundamentals/software-architecture.md
+                - Security: fundamentals/security.md
+          # - Patterns:
+          #       - Microservices Patterns: patterns/microservices.md
+          #       - Caching Strategies: patterns/caching.md
+          #       - Message Queues & Event-Driven: patterns/messaging.md
+          #       - Security Patterns: patterns/security.md
+          # - Case Studies:
+          #       - Social Media Platform: case-studies/social-media.md
+          #       - E-commerce System: case-studies/e-commerce.md
+          #       - Video Streaming Platform: case-studies/streaming.md
+          # - Tools:
+          #       - Cloud Services: tools/cloud.md
+          #       - Monitoring & Observability: tools/monitoring.md
+          #       - Deployment & Orchestration: tools/deployment.md
+    - Backend Development:
+          - "backend/Backend Development.md"
+    - Data Structures & Algorithms:
+          - "data-structures-and-algorithms/Data Structures & Algorithms.md"
+    - Frontend Development:
+          - "frontend/Frontend Development.md"
+    # - Programming Languages:
+    #       - "Programming Languages.md"
+    # - DevOps & Infrastructure:
+    #       - "DevOps & Infrastructure.md"
+    # - Best Practices & Patterns:
+    #       - "Best Practices & Patterns.md"
+    # - Tools & Technologies:
+    #       - "Tools & Technologies.md"
+    # - Career Development:
+    #       - "Career Development.md"
+
+copyright: |
+    &copy; 2025 <a href="https://github.com/arminzou"  target="_blank" rel="noopener">Armin Zou</a>
+
+# Plugins
+plugins:
+    - search
+    - minify:
+          minify_html: true
+
+# Extra CSS
+extra_css:
+    - stylesheets/extra.css

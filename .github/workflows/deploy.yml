@@ -1,0 +1,50 @@
+name: Deploy to Docker VM
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    build-and-deploy:
+        runs-on: self-hosted
+        # Security: Only run from original repo on main branch
+        if: github.repository == 'arminzou/software-engineering-knowledge-base' && github.ref == 'refs/heads/main'
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Setup Python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "3.x"
+
+            - name: Cache dependencies
+              uses: actions/cache@v4
+              with:
+                  key: mkdocs-material-${{ github.run_id }}
+                  path: .cache
+                  restore-keys: |
+                      mkdocs-material-
+
+            - name: Install dependencies
+              run: |
+                  pip install mkdocs-material mkdocs-minify-plugin
+
+            - name: Build site
+              run: mkdocs build
+
+            - name: Deploy locally
+              run: |
+                  mkdir -p ~/docker/mkdocs/software-engineering-kb/site
+                  rsync -avz --delete site/ ~/docker/mkdocs/software-engineering-kb/site/
+
+            - name: Sync compose file
+              run: |
+                  mkdir -p ~/docker/mkdocs/software-engineering-kb/
+                  rsync -avz compose.yaml ~/docker/mkdocs/software-engineering-kb/
+
+            - name: Restart Docker container
+              run: |
+                  cd ~/docker/mkdocs/software-engineering-kb/
+                  docker compose up -d

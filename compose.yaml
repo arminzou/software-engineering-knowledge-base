@@ -1,0 +1,20 @@
+services:
+    knowledge-base:
+        image: nginx:alpine
+        container_name: software-engineering-kb
+        ports:
+            - "8080:80"
+        volumes:
+            - ./site:/usr/share/nginx/html:ro # Mount the site subdirectory
+        restart: unless-stopped
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.kb.rule=Host(`kb.zoulogic.com`)"
+            - "traefik.http.routers.kb.tls=true"
+            - "traefik.http.routers.kb.tls.certresolver=cloudflare"
+        networks:
+            - proxy
+
+networks:
+    proxy:
+        external: true

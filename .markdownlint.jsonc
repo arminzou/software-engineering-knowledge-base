@@ -1,0 +1,48 @@
+{
+  // Markdownlint configuration for consistent formatting
+  "default": true,
+
+  // Line length - allow longer lines for technical documentation
+  "MD013": {
+    "line_length": 500,
+    "code_blocks": false,
+    "tables": false,
+    "headings": false
+  },
+
+  // List indentation - enforce 2-space indentation for nested lists
+  "MD007": {
+    "indent": 2
+  },
+
+  // List marker style - use consistent dashes for unordered lists
+  "MD004": {
+    "style": "dash"
+  },
+
+  // Ordered list marker style - use consistent numbering
+  "MD029": {
+    "style": "ordered"
+  },
+
+  // Allow duplicate headings in different sections
+  "MD024": {
+    "siblings_only": true
+  },
+
+  // Allow inline HTML for complex formatting
+  "MD033": false,
+
+  // Allow bare URLs in angle brackets
+  "MD034": false,
+
+  // Emphasis style - use asterisks for consistency
+  "MD049": {
+    "style": "consistent"
+  },
+
+  // Strong style - use asterisks for consistency
+  "MD050": {
+    "style": "consistent"
+  }
+}
