@@ -88,7 +88,9 @@ nav:
       - Fundamentals:
           - Client-Server Architecture: fundamentals/client-server.md
           - Server-Infrastructure: fundamentals/server-infrastructure.md
-          - Networking & Communication: fundamentals/networking.md
+          - Networking & Communication: 
+              - Overview: fundamentals/networking.md
+              - How Internet Routing Works: fundamentals/routing-deep-dive.md
           - API Development & Management: fundamentals/api.md
           - Database & Storage: fundamentals/database.md
           - Scalability & Performance: fundamentals/scalability.md
@@ -108,12 +110,12 @@ nav:
       #       - Cloud Services: tools/cloud.md
       #       - Monitoring & Observability: tools/monitoring.md
       #       - Deployment & Orchestration: tools/deployment.md
-  - Backend Development:
-      - 'backend/Backend Development.md'
-  - Data Structures & Algorithms:
-      - 'data-structures-and-algorithms/Data Structures & Algorithms.md'
-  - Frontend Development:
-      - 'frontend/Frontend Development.md'
+  # - Backend Development:
+  #     - 'backend/Backend Development.md'
+  # - Data Structures & Algorithms:
+  #     - 'data-structures-and-algorithms/Data Structures & Algorithms.md'
+  # - Frontend Development:
+  #     - 'frontend/Frontend Development.md'
   # - Programming Languages:
   #       - "Programming Languages.md"
   # - DevOps & Infrastructure:

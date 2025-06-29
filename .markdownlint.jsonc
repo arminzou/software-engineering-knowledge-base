@@ -20,6 +20,9 @@
     "style": "dash"
   },
 
+  // Allow duplicate headings in different sections
+  "MD025": false,
+
   // Ordered list marker style - use consistent numbering
   "MD029": {
     "style": "ordered"
